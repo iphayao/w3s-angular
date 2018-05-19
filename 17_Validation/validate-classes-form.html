@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Validate - Classes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        form.ng-pristine {
+            background-color: lightblue;
+        }
+        form.ng-dirty {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="">
+        <form name="myForm">
+            <input name="myName" ng-model="myName" required>
+        </form>
+    </div>
+</body>
+</html>

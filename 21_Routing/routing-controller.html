@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Routing - Provider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+<body ng-app="myApp">
+    <p><a href="#/">Main</a></p>
+    <a href="#!london">Cit 1</a>
+    <a href="#!paris">City 2</a>
+    <div ng-view></div>
+    <script>
+        var app = angular.module('myApp', ['ngRoute']);
+        app.config(function($routeProvider) {
+            $routeProvider
+            .when('/', {
+                templateUrl: 'main.htm'
+            })
+            .when('/london', {
+                templateUrl: 'london.htm',
+                controller: 'londonCtrl'
+            })
+            .when('/paris', {
+                templateUrl: 'paris.htm',
+                controller: 'parisCtrl'
+            })
+        });
+        app.controller('londonCtrl', function($scope) {
+            $scope.message = "I love LONDON";
+        });
+        app.controller('parisCtrl', function($scope) {
+            $scope.message = "I love PARIS";
+        });
+    </script>
+</body>
+</html>
